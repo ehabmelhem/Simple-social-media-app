@@ -37,3 +37,16 @@ exports.addUser = async (req, res) => {
     }
   });
 };
+
+exports.checkUser = async (req, res) => {
+  const { username, password } = req.body;
+  await userCollection
+    .find({ username: username, password: password })
+    .then((docs) => {
+      if (docs.length !== 0) {
+        res.send({ index: 1 });
+      } else {
+        res.send({ index: -1 });
+      }
+    });
+};

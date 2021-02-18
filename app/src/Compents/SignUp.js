@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Alert, AlertTitle } from "@material-ui/lab";
-import { Input } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Link from "@material-ui/core/Link";
+import { useHistory } from "react-router-dom";
 
 import "./SignUp.css";
 function SignUp() {
+  let history = useHistory();
   const [validition, setValid] = useState(false);
   const [typeValid, setTypeValid] = useState("success");
 
@@ -50,6 +52,7 @@ function SignUp() {
       )}
       <div className="signup">
         <TextField
+          autoComplete="off"
           value={user}
           onChange={(e) => {
             setUser(e.target.value);
@@ -61,6 +64,7 @@ function SignUp() {
         <br />
         <br />
         <TextField
+          autoComplete="off"
           value={pass}
           onChange={(e) => {
             if (e.target.value !== confirm) {
@@ -78,6 +82,7 @@ function SignUp() {
         <br />
         <br />
         <TextField
+          autoComplete="off"
           error={error}
           value={confirm}
           onChange={(e) => {
@@ -110,7 +115,16 @@ function SignUp() {
         )}
       </div>
       <h5>
-        if you have been sign up <span>Login</span>
+        if you have been sign up{" "}
+        <Link
+          component="button"
+          variant="body2"
+          onClick={() => {
+            history.push("/login");
+          }}
+        >
+          Login
+        </Link>
       </h5>
     </div>
   );
