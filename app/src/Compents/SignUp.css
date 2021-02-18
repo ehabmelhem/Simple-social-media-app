@@ -1,0 +1,28 @@
+.mainpage {
+  position: relative;
+}
+.valadition {
+  width: 400px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -150px;
+  left: 500px;
+}
+.signup {
+  background-color: whitesmoke;
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+@media only screen and (max-width: 375px) {
+  .valadition {
+    position: absolute;
+    bottom: -150px;
+    width: 270px;
+    left: 48px;
+  }
+}

@@ -1,15 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect } from "react";
+import SignUp from "./Compents/SignUp";
 function App() {
-  useEffect(async () => {
-    await fetch("/user/stam")
-      .then((r) => r.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }, []);
-  return <div className="App"></div>;
+  return (
+    <div className="app">
+      <SignUp />
+    </div>
+  );
 }
 
 export default App;
